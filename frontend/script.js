@@ -13,6 +13,8 @@ const defaultSubjects = [
   }
 ];
 
+const API_BASE_URL = 'https://ai-study-planner-2968.onrender.com';
+
 const state = {
   subjects: defaultSubjects,
   plan: null
@@ -161,7 +163,7 @@ async function generatePlan() {
   showStatus('Generating your personalized study plan...', 'info');
 
   try {
-    const response = await fetch('/api/plans/generate', {
+    const response = await fetch(`${API_BASE_URL}/api/plans/generate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
