@@ -1,0 +1,21 @@
+{
+  "name": "ai-study-planner",
+  "version": "1.0.0",
+  "description": "AI-powered study planner web application",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.0",
+    "dotenv": "^16.4.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^8.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.1"
+  }
+}

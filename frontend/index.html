@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI-powered study planner for personalized learning" />
+    <title>AI Study Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-badge">AI</div>
+          <div>
+            <h1>Study Planner</h1>
+            <p>Personalized learning</p>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#profile" class="active">Profile</a>
+          <a href="#planner">Planner</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#resources">Resources</a>
+        </nav>
+        <div class="sidebar-card">
+          <h3>Daily Focus</h3>
+          <p>Stay consistent with short study bursts and revision blocks.</p>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">AI-POWERED EDUCATION</p>
+            <h2>Design your smartest study journey</h2>
+          </div>
+          <button id="themeToggle" class="ghost-btn">🌙 Dark Mode</button>
+        </header>
+
+        <section id="profile" class="card hero-card">
+          <div class="hero-copy">
+            <h3>Create your student profile</h3>
+            <p>Tell us about your academic goals, available hours, and exam timeline to generate a smart plan.</p>
+            <button class="primary-btn" id="generateBtn">Generate Study Plan</button>
+          </div>
+          <form id="profileForm" class="profile-form">
+            <div class="grid-2">
+              <input name="name" placeholder="Full name" required />
+              <input name="class" placeholder="Class / Grade" required />
+              <input name="school" placeholder="School / College" />
+              <input name="board" placeholder="Board" />
+              <input name="stream" placeholder="Stream" />
+              <input name="hours" type="number" placeholder="Daily study hours" required />
+              <input name="examDate" type="date" required />
+              <select name="level">
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+          </form>
+        </section>
+
+        <section id="planner" class="card">
+          <div class="section-head">
+            <h3>Subject & topic selection</h3>
+            <p>Choose subjects and the topics you want to improve.</p>
+          </div>
+          <div class="subjects-grid" id="subjectsGrid"></div>
+          <div class="actions">
+            <button class="secondary-btn" id="addSubjectBtn">+ Add custom subject</button>
+          </div>
+          <div id="statusBox" class="status-box">Fill in your profile and generate a plan.</div>
+        </section>
+
+        <section id="dashboard" class="card dashboard-grid">
+          <div class="panel">
+            <h3>Study dashboard</h3>
+            <div class="stats-grid">
+              <div class="stat"><span>Overall Progress</span><strong id="progressValue">0%</strong></div>
+              <div class="stat"><span>Study Streak</span><strong id="streakValue">0 days</strong></div>
+              <div class="stat"><span>Hours Studied</span><strong id="hoursValue">0 hrs</strong></div>
+              <div class="stat"><span>Exam Countdown</span><strong id="countdownValue">0 days</strong></div>
+            </div>
+            <div class="progress-bar"><div id="progressBar"></div></div>
+          </div>
+          <div class="panel">
+            <h3>Motivation</h3>
+            <p id="motivationText">You’re building a strong plan—one session at a time.</p>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <h3>AI-generated roadmap</h3>
+            <p>Your personalized subject roadmap appears here.</p>
+          </div>
+          <div id="roadmapOutput" class="roadmap-list"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <h3>Daily timetable & weekly plan</h3>
+            <p>Structured focus blocks for consistency and retention.</p>
+          </div>
+          <div id="timetableOutput" class="resources-list"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <h3>Revision & practice plan</h3>
+            <p>Spaced repetition, mock tests, and practice suggestions.</p>
+          </div>
+          <div id="revisionOutput" class="resources-list"></div>
+        </section>
+
+        <section id="resources" class="card">
+          <div class="section-head">
+            <h3>Best learning resources</h3>
+            <p>Recommended videos, courses, practice platforms, and notes.</p>
+          </div>
+          <div id="resourcesOutput" class="resources-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
